@@ -9,3 +9,6 @@ http://hashrocket.com/blog/posts/faster-json-generation-with-postgresql
 
 Writing devise in postgres
 http://rob.conery.io/2015/02/21/its-time-to-get-over-that-stored-procedure-aversion-you-have/
+
+Pub sub for cache busting
+https://www.chrisstucchio.com/blog/2013/postgres_external_triggers.html
