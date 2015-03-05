@@ -7,6 +7,9 @@ http://brainspec.com/blog/2012/09/28/lightning-json-in-rails/
 
 http://hashrocket.com/blog/posts/faster-json-generation-with-postgresql
 
+Extension to active model serializers
+https://github.com/dockyard/postgres_ext-serializers
+
 Writing devise in postgres
 http://rob.conery.io/2015/02/21/its-time-to-get-over-that-stored-procedure-aversion-you-have/
 
