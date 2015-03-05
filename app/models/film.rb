@@ -1,5 +1,7 @@
 class Film < ActiveRecord::Base
   belongs_to :language
+  has_many :film_actors
+  has_many :actors, through: :films
 
   class << self
     def fast_json
