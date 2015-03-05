@@ -9,16 +9,21 @@ class Film < ActiveRecord::Base
     end
 
     def build_sql(id_sql)
-      sql = "
-with our_films as (
+      "
+with our_languages as (
+    select id, row_to_json(lj) pgjson
+    FROM ( select id, name from languages) lj
+),
+our_films as (
     SELECT id, row_to_json(fj) pgjson
     FROM (
-         select id, title, release_year
-    FROM films
+        select films.id, title, release_year, our_languages.pgjson \"language\"
+        from films
+        left join our_languages
+        on films.language_id = our_languages.id
     ) fj
 )
-
-select json_agg(pgjson)
+select json_agg(our_films.pgjson)
 from our_films
 where id in (#{id_sql})"
       #ActiveRecord::Base.send(:sanitize_sql_array, [sql, ids])
